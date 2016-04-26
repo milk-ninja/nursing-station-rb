@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
              status: :unauthorized
     end
   end
-  # helper_method :current_user
+
   #
   # def current_user
   #   user_id = session[:user_id]
