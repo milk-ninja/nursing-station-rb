@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  validates :password, presence: true, uniqueness: true, length: { in: 6..20, 
+  validates :password, presence: true, uniqueness: true, length: { in: 6..20,
                   message: "Must be between 4 and 15 characters"
   }
   validate :email, presence: true, uniqueness: true, format: {
@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
     while User.exists?(auth_token: token)
       token = SecureRandom.hex
     end
-    token
+      token
   end
-
 end
