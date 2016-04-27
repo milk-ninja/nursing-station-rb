@@ -90,14 +90,12 @@ This logs in your user
    }
    ```
 
-#### POST /login
+#### POST /place
 
    This adds a place to our database
       Params:
-      	* username: string
-      	* password: string
-
-      	* header: Auth-Token
+      * TBD
+      * header: Auth-Token
 
       Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect user data.
 
@@ -117,7 +115,7 @@ This logs in your user
 
       ```
       {
-        {
+        "place": {
           TBD
         }
       }
