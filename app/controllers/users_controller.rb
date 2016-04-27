@@ -18,7 +18,7 @@ class UsersController < ApplicationController
              status: :ok
     else
       render json: { message: "Auth isn't working yet." },
-              status: :unauthorized
+             status: :unauthorized
     end
   end
 end
