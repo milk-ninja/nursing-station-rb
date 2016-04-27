@@ -3,8 +3,8 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
     @user.ensure_auth_token
     if @user.save
-      render json: { user: @user.as_json(only: [:first_name, :last_name, :email, :auth_token ]) },
-             status: :created
+      render "create.json.jbuilder", status: :created
+    
     else
       render json: { errors: @user.errors.full_messages },
              status: :unprocessable_entity
