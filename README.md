@@ -90,6 +90,38 @@ This logs in your user
    }
    ```
 
+#### POST /login
+
+   This adds a place to our database
+      Params:
+      	* username: string
+      	* password: string
+
+      	* header: Auth-Token
+
+      Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect user data.
+
+      **Request:**
+
+      ```
+      {
+        "name": "Nordstrom Phipps Plaza",
+        "address": "3500 Peachtree RD NE Atlanta,GA 30326",
+        "description": "Dedicated Moms room 2nd floor Women's Apparel ",
+        "lat": "33.8528444",
+        "long": "-84.3622208"
+      }
+      ```
+
+      **Response:**
+
+      ```
+      {
+        {
+          TBD
+        }
+      }
+      ```
 == README
 
 This README would normally document whatever steps are necessary to get the
