@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_secure_password
-
   has_attached_file :avatar
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
@@ -8,6 +7,7 @@ class User < ActiveRecord::Base
             with: /.+@.+\..+/, message: "Please put in valid email"
   }
   validates_presence_of :first_name, :last_name, :email
+  has_many :ratings
 
   def ensure_auth_token
     unless self.auth_token
