@@ -1,3 +1,95 @@
+# milkninja API
+
+ Welcome to milkninja, a public site for posting awesome places to nurse in comfort and privacy.
+
+## General Rules
+
+### Authorization
+
+ All authorized requests unless otherwise mentioned require
+ an "**Auth-Token**" header to be present. Users are assigned an
+ Auth Token during account creation.
+
+### Errors
+
+ Any request that fails to be processed will contain an "errors"
+ key in the returned JSON describing the problem.
+
+## Routes
+
+#### POST /register
+
+  This creates a new user
+  Params:
+    * first_name: string
+    * last_name: string
+    * username: string
+    * email: string
+    * password: string
+    * zipcode: integer
+    * avatar: attachment
+
+  Returns 201 Created on Success and 422 Unprocessable Entity in case fof failure.
+
+  **Request:**
+
+  ```
+  {
+    "first_name": "Mallerie"
+    "last_name": "Shirley"
+    "username": "username"
+    "password": "password"
+    "zipcode": "00000"
+    "avatar": "daisy_pollen_flower_220533.jpg"
+
+  }
+  ```
+
+  **Response:**
+
+  ```
+  {
+    "user": {
+      "first_name": "Mallerie",
+      "username": "username",
+      "auth_token": "7774743beeb3c26dfdd80213ba1b9097",
+      "avatar": "http://s3.amazonaws.com/milkninja/users/avatars/000/000/017/original/daisy_pollen_flower220533.jpg?1461781531"
+    }
+  }
+  ```
+
+#### POST /login
+
+This logs in your user
+   Params:
+   	* username: string
+   	* password: string
+
+   	* header: Auth-Token
+
+   Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect user data.
+
+   **Request:**
+
+   ```
+   {
+     username: username,
+     password: password
+   }
+   ```
+
+   **Response:**
+
+   ```
+   {
+     "user": {
+      "username": "username",
+      "auth_token": "7774743beeb3c26dfdd80213ba1b9097",
+      "avatar": "http://s3.amazonaws.com/milkninja/users/avatars/000/000/017/original/daisy_pollen_flower_220533.jpg?1461781531"
+     }
+   }
+   ```
+
 == README
 
 This README would normally document whatever steps are necessary to get the
