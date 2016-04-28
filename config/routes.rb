@@ -17,9 +17,10 @@ Rails.application.routes.draw do
 
   post "/login", to: "users#login"
 
-  resources :users, except: [:new, :create] do
-    resources :places, only: [:create]
-  end
+  resources :users, except: [:new, :create]
+
+  resources :places, only: [:create]
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
