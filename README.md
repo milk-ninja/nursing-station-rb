@@ -116,7 +116,11 @@ This logs in your user
       ```
       {
         "place": {
-          TBD
+          "name": "Nordstrom Phipps Plaza",
+          "address": "3500 Peachtree RD NE Atlanta,GA 30326",
+          "description": "Dedicated Moms room 2nd floor Women's Apparel ",
+          "lat": "33.8528444",
+          "long": "-84.3622208"
         }
       }
       ```
