@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   post "/register", to: "registrations#create"
 
   post "/login", to: "users#login"
+
+  resources :users, except: [:new, :create] do
+    resources :places, only: [:create]
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
