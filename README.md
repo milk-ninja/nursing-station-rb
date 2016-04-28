@@ -124,6 +124,43 @@ This logs in your user
         }
       }
       ```
+
+#### POST /places/:place_id/ratings
+
+    This adds your rating to our database
+      Params:
+      * header: Auth-Token
+
+      Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect user data.
+
+      **Request:**
+
+      ```
+        {
+          "place_id": 1,
+          "user_id": 7,
+          "comment": "Decent nothing special",
+          "privacy": 3,
+          "cleanliness": 3
+        }
+      ```
+
+      **Response:**
+
+      ```
+        {
+          "rating": {
+            "user_id": 7,
+            "place_id": 1,
+            "comment": "Decent nothing special",
+            "privacy": 3,
+            "cleanliness": 3
+          }
+        }
+      ```
+
+#### GET /places/place_id/ratings
+
 == README
 
 This README would normally document whatever steps are necessary to get the
