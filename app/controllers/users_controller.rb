@@ -4,8 +4,9 @@ class UsersController < ApplicationController
  def login
     @user = User.find_by!(username: params["username"])
     if @user.authenticate(params[:password])
-      render json: { user: @user.as_json(only:[:first_name, :auth_token, :avatar, :zipcode]) },
+      render json: { user: @user.as_json },
              status: :ok
+    binding.pry
     else
       render json: { message: "Username or password could not be found." },
              status: :unauthorized
