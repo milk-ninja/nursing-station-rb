@@ -104,7 +104,10 @@ This logs in your user
       ```
       {
         "name": "Nordstrom Phipps Plaza",
-        "address": "3500 Peachtree RD NE Atlanta,GA 30326",
+        "street": "3500 Peachtree RD NE,
+        "city": Atlanta,
+        "state": "GA",
+        "zipcode": 30326,
         "description": "Dedicated Moms room 2nd floor Women's Apparel ",
         "lat": "33.8528444",
         "long": "-84.3622208"
@@ -117,7 +120,7 @@ This logs in your user
       {
         "place": {
           "name": "Nordstrom Phipps Plaza",
-          "address": "3500 Peachtree RD NE Atlanta,GA 30326",
+          "full_address": "3500 Peachtree RD NE Atlanta,GA 30326",
           "description": "Dedicated Moms room 2nd floor Women's Apparel ",
           "lat": "33.8528444",
           "long": "-84.3622208"
@@ -146,8 +149,8 @@ This logs in your user
       ```
         {
           "places":[
-          {"name":"Nordstrom Phipps Plaza","address":"3500 Peachtree Rd NE Atlanta,GA 30326"},
-          {"name":"Iron Yard","address":"115 M.L.K. Dr. Atlanta,GA 30306"}]
+          {"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326"},
+          {"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306"}]
         }
       ```
 
