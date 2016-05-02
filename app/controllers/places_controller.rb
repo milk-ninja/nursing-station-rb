@@ -16,8 +16,13 @@ class PlacesController < ApplicationController
     render "index.json.jbuilder", status: :ok
   end
 
+  # def full_address
+  #   params.permit(:street, :city, :state, :zip)
+  # end
+
   private
   def place_params
-    params.permit(:name, :address, :description, :lat, :long)
+    params.permit(:name, :street, :city, :state, :zip, :description, :lat, :long)
   end
+
 end
