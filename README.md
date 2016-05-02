@@ -29,7 +29,7 @@
     * zipcode: integer
     * avatar: attachment
 
-  Returns 201 Created on Success and 422 Unprocessable Entity in case fof failure.
+  Returns 201 Created on Success and 422 Unprocessable Entity in case of failure.
 
   **Request:**
 
@@ -97,7 +97,7 @@ This logs in your user
       * TBD
       * header: Auth-Token
 
-      Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect user data.
+      Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect place data.
 
       **Request:**
 
@@ -123,6 +123,32 @@ This logs in your user
           "long": "-84.3622208"
         }
       }
+      ```
+
+#### GET /places
+
+    This returns the listing of places in our database
+      Params:
+      * header: Auth-Token
+
+      Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect data
+
+      **Request**
+
+      ```
+        {
+          TBD
+        }
+      ```
+
+      **Response**
+
+      ```
+        {
+          "places":[
+          {"name":"Nordstrom Phipps Plaza","address":"3500 Peachtree Rd NE Atlanta,GA 30326"},
+          {"name":"Iron Yard","address":"115 M.L.K. Dr. Atlanta,GA 30306"}]
+        }
       ```
 
 #### POST /places/:place_id/ratings
@@ -159,7 +185,6 @@ This logs in your user
         }
       ```
 
-#### GET /places/place_id/ratings
 
 == README
 
