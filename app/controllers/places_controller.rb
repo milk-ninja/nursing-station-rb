@@ -11,6 +11,11 @@ class PlacesController < ApplicationController
     end
   end
 
+  def index
+    @places = Place.all
+    render "index.json.jbuilder", status: :ok
+  end
+
   private
   def place_params
     params.permit(:name, :address, :description, :lat, :long)

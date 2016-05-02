@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new, :create]
 
-  resources :places, only: [:create] do
+  resources :places, only: [:create, :index] do
     resources :ratings, only: [:create]
   end
   # Example resource route with options:
