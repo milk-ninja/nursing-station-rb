@@ -10,6 +10,8 @@ class PlacesController < ApplicationController
              status: :inprocessable_entity
     end
   end
+  def show
+  end
 
   def index
     @places = Place.all

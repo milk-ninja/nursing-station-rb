@@ -107,7 +107,7 @@ This logs in your user
         "street": "3500 Peachtree RD NE,
         "city": Atlanta,
         "state": "GA",
-        "zipcode": 30326,
+        "zip": 30326,
         "description": "Dedicated Moms room 2nd floor Women's Apparel ",
         "lat": "33.8528444",
         "long": "-84.3622208"
