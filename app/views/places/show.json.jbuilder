@@ -4,4 +4,7 @@ json.ratings @place.ratings do |rating|
     json.privacy rating.privacy
     json.cleanliness rating.cleanliness
     json.comment rating.comment
+    json.images rating.images do |image|
+      json.image image.image.url
+    end
   end
