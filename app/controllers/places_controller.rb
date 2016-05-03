@@ -11,6 +11,8 @@ class PlacesController < ApplicationController
     end
   end
   def show
+    @place = Place.find_by!(id: params["id"])
+    render "show.json.jbuilder"
   end
 
   def index
