@@ -94,7 +94,6 @@ This logs in your user
 
    This adds a place to our database
       Params:
-      * TBD
       * header: Auth-Token
 
       Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect place data.
@@ -109,8 +108,10 @@ This logs in your user
         "state": "GA",
         "zip": 30326,
         "description": "Dedicated Moms room 2nd floor Women's Apparel ",
-        "lat": "33.8528444",
-        "long": "-84.3622208"
+        "privacy": "4",
+        "cleanliness": "4",
+        "comment": "Super Nice!",
+        "image": "daisy_pollen_flower_220533.jpg"
       }
       ```
 
@@ -148,6 +149,45 @@ This logs in your user
         }
       ```
 
+#### GET /places/:id
+
+    This pulls all the details associated with this specific place posting
+      params:
+      * header: Auth_token
+
+      Returns 200 OK on Success and 401 Unauthorized if no current user or incorrect data
+
+      **Request**
+
+      ```
+        {
+          "id": 9
+        }
+      ```
+
+      **Response**
+
+      ```
+      {
+        "place": {
+          "name": "Whole Foods",
+          "full_address": "2111 Briarcliff Rd NE, Atlanta, GA, 30329",
+          "description": "Super Nice!"},
+          "ratings": [
+          {
+            "user_id": null,
+            "privacy": 4,
+            "cleanliness": 4,
+            "comment": "Super Nice!",
+            "images": [
+            {
+              "image": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"
+            }
+            ]
+          }
+          ]
+        }
+      ```
 #### POST /places/:place_id/ratings
 
     This adds your rating to our database
