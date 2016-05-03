@@ -17,16 +17,15 @@ Rails.application.routes.draw do
 
   post "/login", to: "users#login"
 
-  get "/places/find_nearby", to: "places#find_nearby"
   resources :users, except: [:new, :create, :index]
 
+  get "/places/find_nearby", to: "places#find_nearby"
   resources :places, only: [:create, :show] do
     resources :ratings, only: [:create, :index, :show] do
       resources :images, only: [:create]
     end
   end
 
-  get "/places/find_nearby", to: "places#find_nearby"
   # Example resource route with options:
   #   resources :products do
   #     member do
