@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     @rating = @place.ratings.new(rating_params)
-    binding.pry
     @image = @rating.images.new(image_params)
 
     if @place.save
