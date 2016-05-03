@@ -19,8 +19,10 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new, :create]
 
-  resources :places, only: [:create] do
-    resources :ratings, only: [:create]
+  resources :places, only: [:create, :show] do
+    resources :ratings, only: [:create, :index, :show] do
+      resources :images, only: [:create]
+    end
   end
 
   get "/places/find_nearby", to: "places#find_nearby"
