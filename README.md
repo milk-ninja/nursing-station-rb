@@ -128,21 +128,15 @@ This logs in your user
       }
       ```
 
-#### GET /places
+#### GET /places/find_nearby
 
-    This returns the listing of places in our database
+    This returns the listing of places in our database near current location
       Params:
       * header: Auth-Token
+      * lat: 00.00
+      * long: -00.00
 
       Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect data
-
-      **Request**
-
-      ```
-        {
-          TBD
-        }
-      ```
 
       **Response**
 
