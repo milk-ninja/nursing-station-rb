@@ -1,6 +1,6 @@
 class Place < ActiveRecord::Base
   validates :street, presence: true, uniqueness: true
-  validates_presence_of :name, :city, :state, :zip, :lat, :long
+  validates_presence_of :name, :city, :state, :zip
   has_many :ratings
 
   geocoded_by :full_address, :latitude  => :lat, :longitude => :long
