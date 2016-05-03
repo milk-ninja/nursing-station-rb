@@ -18,9 +18,10 @@ class PlacesController < ApplicationController
     render "index.json.jbuilder", status: :ok
   end
 
-  # def full_address
-  #   params.permit(:street, :city, :state, :zip)
-  # end
+  def find_nearby
+    @places = Place.near([params[:lat], params[:long]], 10)
+    render "find_nearby.json.jbuilder"
+  end
 
   private
   def place_params
