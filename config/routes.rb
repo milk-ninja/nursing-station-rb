@@ -19,9 +19,11 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new, :create]
 
-  resources :places, only: [:create, :index] do
+  resources :places, only: [:create] do
     resources :ratings, only: [:create]
   end
+
+  get "/places/find_nearby", to: "places#find_nearby"
   # Example resource route with options:
   #   resources :products do
   #     member do
