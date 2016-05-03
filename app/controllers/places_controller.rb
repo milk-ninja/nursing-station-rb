@@ -10,6 +10,7 @@ class PlacesController < ApplicationController
              status: :inprocessable_entity
     end
   end
+
   def show
     @place = Place.find_by!(id: params["id"])
     render "show.json.jbuilder"
@@ -22,6 +23,7 @@ class PlacesController < ApplicationController
 
   def find_nearby
     @places = Place.near([params[:lat], params[:long]], 10)
+  binding.pry  
     render "find_nearby.json.jbuilder"
   end
 

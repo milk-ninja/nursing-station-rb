@@ -1,0 +1,11 @@
+def controller_add_thing
+  @place = Place.new(......)
+  if @place.save
+   ...
+  end
+end
+
+def find_nearby_controller
+  @places = Place.near([params[:lat], params[:long]], 10)
+  render "near_me.json.jbuilder"
+end

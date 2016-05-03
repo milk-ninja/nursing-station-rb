@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   post "/login", to: "users#login"
 
-  resources :users, except: [:new, :create]
+  get "/places/find_nearby", to: "places#find_nearby"
+  resources :users, except: [:new, :create, :index]
 
   resources :places, only: [:create, :show] do
     resources :ratings, only: [:create, :index, :show] do
