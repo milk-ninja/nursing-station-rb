@@ -38,6 +38,7 @@
     "first_name": "Mallerie"
     "last_name": "Shirley"
     "username": "username"
+    "email": "email@email.com"
     "password": "password"
     "zipcode": "00000"
     "avatar": "daisy_pollen_flower_220533.jpg"
@@ -50,6 +51,7 @@
   ```
   {
     "user": {
+      "id": 1,
       "first_name": "Mallerie",
       "username": "username",
       "auth_token": "7774743beeb3c26dfdd80213ba1b9097",
@@ -83,6 +85,7 @@ This logs in your user
    ```
    {
      "user": {
+       "id": 1,
       "username": "username",
       "auth_token": "7774743beeb3c26dfdd80213ba1b9097",
       "avatar": "http://s3.amazonaws.com/milkninja/users/avatars/000/000/017/original/daisy_pollen_flower_220533.jpg?1461781531"
