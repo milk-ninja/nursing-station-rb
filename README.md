@@ -93,7 +93,7 @@ This logs in your user
    }
    ```
 
-#### POST /place
+#### POST /places
 
    This adds a place to our database
       Params:
@@ -111,10 +111,10 @@ This logs in your user
         "state": "GA",
         "zip": 30326,
         "description": "Dedicated Moms room 2nd floor Women's Apparel ",
+        "avatar": "daisy_pollen_flower_220533",
         "privacy": "4",
         "cleanliness": "4",
-        "comment": "Super Nice!",
-        "image": "daisy_pollen_flower_220533.jpg"
+        "comment": "Super Nice!"
       }
       ```
 
@@ -127,7 +127,8 @@ This logs in your user
           "full_address": "3500 Peachtree RD NE Atlanta,GA 30326",
           "description": "Dedicated Moms room 2nd floor Women's Apparel ",
           "lat": "33.8528444",
-          "long": "-84.3622208"
+          "lng": "-84.3622208",
+          "avatar_url": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"
         }
       }
       ```
@@ -147,8 +148,8 @@ This logs in your user
       ```
         {
           "places":[
-          {"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326"},
-          {"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306"}]
+          {"id": 6,"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326","lat":33.7445406,"lng":-84.34266,"avatar_url":"http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"},
+          {"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"}]
         }
       ```
 
