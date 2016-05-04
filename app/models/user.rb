@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
             with: /.+@.+\..+/, message: "Please put in valid email"
   }
   validates_presence_of :first_name, :last_name, :email
+  # validates :username, presence: true, uniqueness: true
   has_many :ratings
 
   def ensure_auth_token
