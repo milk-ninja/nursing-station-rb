@@ -29,7 +29,7 @@ class PlacesController < ApplicationController
 
   private
   def place_params
-    params.permit(:name, :street, :city, :state, :zip, :description, :lat, :long, :avatar)
+    params.permit(:name, :street, :city, :state, :zip, :description, :lat, :lng, :avatar)
   end
 
   def rating_params

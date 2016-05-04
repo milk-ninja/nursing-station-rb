@@ -3,6 +3,6 @@ json.places @places do |place|
   json.name place.name
   json.full_address place.full_address
   json.lat place.lat
-  json.long place.long
+  json.lng place.lng
   json.avatar_url place.avatar.url
 end

@@ -3,7 +3,7 @@ class Place < ActiveRecord::Base
   validates_presence_of :name, :city, :state, :zip
   has_many :ratings
 
-  geocoded_by :full_address, :latitude  => :lat, :longitude => :long
+  geocoded_by :full_address, :latitude  => :lat, :longitude => :lng
   before_validation :ensure_coords!
 
   has_attached_file :avatar
