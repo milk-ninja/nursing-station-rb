@@ -142,6 +142,7 @@ This logs in your user
       * long: -00.00
 
       Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect data
+      Note you will want to save the id of the place to the object using to list them will need it view a specific listing
 
       **Response**
 
@@ -149,7 +150,7 @@ This logs in your user
         {
           "places":[
           {"id": 6,"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326","lat":33.7445406,"lng":-84.34266,"avatar_url":"http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"},
-          {"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"}]
+          {"id": 7,"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"}]
         }
       ```
 
@@ -174,6 +175,7 @@ This logs in your user
       ```
       {
         "place": {
+          "id": 7,
           "name": "Whole Foods",
           "full_address": "2111 Briarcliff Rd NE, Atlanta, GA, 30329",
           "description": "Super Nice!"},
@@ -199,6 +201,7 @@ This logs in your user
       * header: Auth-Token
 
       Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect user data.
+      ":" in front of a key means client must supply this key in the path for the path to work
 
       **Request:**
 
@@ -208,7 +211,8 @@ This logs in your user
           "user_id": 7,
           "comment": "Decent nothing special",
           "privacy": 3,
-          "cleanliness": 3
+          "cleanliness": 3,
+          "image": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"
         }
       ```
 
@@ -221,8 +225,8 @@ This logs in your user
             "place_id": 1,
             "comment": "Decent nothing special",
             "privacy": 3,
-            "cleanliness": 3
-          }
+            "cleanliness": 3},
+            "image": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"            
         }
       ```
 
