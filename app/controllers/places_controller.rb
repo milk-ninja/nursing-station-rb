@@ -23,7 +23,7 @@ class PlacesController < ApplicationController
   end
 
   def find_nearby
-    @places = Place.near([params[:lat], params[:long]], 10)
+    @places = Place.near([params[:lat], params[:lng]], 10)
     render "find_nearby.json.jbuilder"
   end
 
