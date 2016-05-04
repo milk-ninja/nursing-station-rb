@@ -1,1 +1,1 @@
-json.rating @rating, :user_id, :place_id, :comment, :privacy, :cleanliness
+json.rating @rating, :id, :user_id, :place_id, :comment, :privacy, :cleanliness
