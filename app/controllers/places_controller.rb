@@ -4,7 +4,6 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     @rating = @place.ratings.new(rating_params)
-    @image = @rating.images.new(image_params)
 
     if @place.save
       render "create.json.jbuilder", status: :created
@@ -31,7 +30,7 @@ class PlacesController < ApplicationController
 
   private
   def place_params
-    params.permit(:name, :street, :city, :state, :zip, :description, :lat, :long)
+    params.permit(:name, :street, :city, :state, :zip, :description, :lat, :long, :avatar)
   end
 
   def rating_params
