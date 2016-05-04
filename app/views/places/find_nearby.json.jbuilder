@@ -4,4 +4,5 @@ json.places @places do |place|
   json.full_address place.full_address
   json.lat place.lat
   json.long place.long
+  json.avatar_url place.avatar.url
 end

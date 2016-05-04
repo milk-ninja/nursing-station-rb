@@ -1,1 +1,1 @@
-json.place @place, :name, :street, :city, :state, :zip, :description, :lat, :long
+json.place @place, :name, :street, :city, :state, :zip, :description, :lat, :long, :avatar
