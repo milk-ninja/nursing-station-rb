@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_attached_file :avatar
+  has_attached_file :avatar, :default => "https://tiyatlanta.slack.com/files/mallerie/F16FW6ZQD/ninja_head.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
