@@ -11,12 +11,19 @@ class Place < ActiveRecord::Base
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
   def ensure_coords!
-    unless self.lat && self.long
+    unless self.lat && self.lng
       self.geocode
     end
   end
 
   def full_address
     [street, city, state, zip].compact.join(", ")
+  end
+
+  def avg_privacy
+    self.ratings.average(:privacy)
+  end
+
+  def avg_cleanliness
   end
 end

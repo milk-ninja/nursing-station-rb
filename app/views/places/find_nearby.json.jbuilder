@@ -5,4 +5,5 @@ json.places @places do |place|
   json.lat place.lat
   json.lng place.lng
   json.avatar_url place.avatar.url
+  json.privacy place.avg_privacy
 end
