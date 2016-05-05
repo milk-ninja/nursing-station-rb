@@ -143,14 +143,15 @@ This logs in your user
 
       Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect data
       Note you will want to save the id of the place to the object using to list them will need it view a specific listing
+      Note "privacy" & "cleanliness" below are the averages of the ratings of that place may be decimal
 
       **Response**
 
       ```
         {
           "places":[
-          {"id": 6,"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326","lat":33.7445406,"lng":-84.34266,"avatar_url":"http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263","privacy": "4"},
-          {"id": 7,"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263", "privacy": "4"}]
+          {"id": 6,"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326","lat":33.7445406,"lng":-84.34266,"avatar_url":"http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263","privacy": "4","cleanliness": "4"},
+          {"id": 7,"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263", "privacy": "4", "cleanliness": "4"}]
         }
       ```
 
