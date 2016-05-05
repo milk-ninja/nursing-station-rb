@@ -149,8 +149,8 @@ This logs in your user
       ```
         {
           "places":[
-          {"id": 6,"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326","lat":33.7445406,"lng":-84.34266,"avatar_url":"http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"},
-          {"id": 7,"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"}]
+          {"id": 6,"name":"Nordstrom Phipps Plaza","full_address":"3500 Peachtree Rd NE Atlanta,GA 30326","lat":33.7445406,"lng":-84.34266,"avatar_url":"http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263","privacy": "4"},
+          {"id": 7,"name":"Iron Yard","full_address":"115 M.L.K. Dr. Atlanta,GA 30306,"lat":33.8808067,"lng":-84.333477","avatar_url":http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263", "privacy": "4"}]
         }
       ```
 
