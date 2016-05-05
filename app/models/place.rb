@@ -25,5 +25,6 @@ class Place < ActiveRecord::Base
   end
 
   def avg_cleanliness
+    self.ratings.average(:cleanliness)
   end
 end
