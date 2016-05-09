@@ -192,7 +192,6 @@ DEPENDENCIES
   dotenv-rails
   geocoder
   google_places
-  httparty
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
