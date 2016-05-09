@@ -1,9 +1,9 @@
 class Place < ActiveRecord::Base
   validates :street, presence: true, uniqueness: true
-  validates_presence_of :name, :city, :state, :zip
+  # validates_presence_of :name, :city, :state, :zip
   has_many :ratings
 
-  geocoded_by :full_address, :latitude  => :lat, :longitude => :lng
+  # geocoded_by :full_address, :latitude  => :lat, :longitude => :lng
   before_validation :ensure_coords!
 
   has_attached_file :avatar, :default => "https://tiyatlanta.slack.com/files/mallerie/F16FW6ZQD/ninja_head.png"
