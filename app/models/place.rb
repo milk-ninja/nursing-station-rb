@@ -8,7 +8,7 @@ class Place < ActiveRecord::Base
 
   has_attached_file :avatar, :default_url => "https://tiyatlanta.slack.com/files/mallerie/F16FW6ZQD/ninja_head.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  # validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
+  validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
   def ensure_coords!
     unless self.lat && self.lng
