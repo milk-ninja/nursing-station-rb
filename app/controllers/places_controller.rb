@@ -5,20 +5,15 @@ class PlacesController < ApplicationController
     @client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
     a = @client.spots(33.756888, -84.3918611, :name => name.to_s, :type => type.to_s, :radius => radius.to_i)
     new_places = a.reject {|place| place.name.length = name.length}
-    new_places.map do |x|
+    @places = new_places.map do |x|
       name = x.name
       street = x.vicinity.split(",").first
       city = x.vicinity.split(",").last
       avatar = x.photos[0].fetch_url(800)
-      @place = Place.new(name: name, street: street, city: city, state: "Ga", lat: x.lat, lng: x.lng, avatar: avatar)
-      if @place.save
-        render "create.json.jbuilder", status: :created
-      else
-        render json: {errors: place.errors.full_messages},
-        status: :inprocessable_entity
-      end
+      place = Place.create(name: name, street: street, city: city, state: "Ga", lat: x.lat, lng: x.lng, avatar: avatar)
     end
-
+    # json.saved place.persisted?
+    render "spots.json.jbuilder", status: :ok
   end
 
   def create
