@@ -1,5 +1,18 @@
 class PlacesController < ApplicationController
   before_action :authenticate!, only: [:check_auth]
+  def spots(name, type)
+    @client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
+    a = @client.spots(33.756888, -84.3918611, :name => 'BuyBuy Baby', :type => 'store', :radius => 120000)
+    new_places = a.map do |x|
+      name = x.name
+      street = x.vicinity.split(",").first
+      city = x.vicinity.split(",").last
+      avatar = x.photos[0].fetch_url(800)
+      place = Place.new(name: name, street: street, city: city, state: "Ga", lat: x.lat, lng: x.lng, avatar: avatar)
+      place.save
+    end
+
+  end
 
   def create
     @place = Place.new(place_params)
@@ -23,9 +36,10 @@ class PlacesController < ApplicationController
   end
 
   def find_nearby
-    @places = Place.near([params[:lat], params[:lng]], 10)
+    @places = Place.near([params[:lat], params[:lng]], 20)
     render "find_nearby.json.jbuilder"
   end
+
 
   private
   def place_params
