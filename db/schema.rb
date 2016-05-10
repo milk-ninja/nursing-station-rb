@@ -11,10 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426173651) do
+ActiveRecord::Schema.define(version: 20160504195225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "rating_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "street"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "city"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "place_id"
+    t.text     "comment"
+    t.integer  "privacy"
+    t.integer  "cleanliness"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -23,9 +60,13 @@ ActiveRecord::Schema.define(version: 20160426173651) do
     t.string   "email"
     t.string   "password_digest"
     t.integer  "zipcode"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "auth_token"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

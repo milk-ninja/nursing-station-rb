@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_attached_file :avatar, :default => "https://tiyatlanta.slack.com/files/mallerie/F16FW6ZQD/ninja_head.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
-  # validates :password, presence: true, uniqueness: true, length: { in: 6..20,
-  #                 message: "Must be between 4 and 15 characters"
-  # }
-  # validates :email, presence: true, uniqueness: true, format: {
-  #           with: /.+@.+\..+/, message: "Please put in valid email"
-  # }
-  # validates_presence_of :first_name, :last_name, :email, :password
+  validates :email, presence: true, uniqueness: true, format: {
+            with: /.+@.+\..+/, message: "Please put in valid email"
+  }
+  validates_presence_of :first_name, :last_name, :email
+  validates :username, presence: true, uniqueness: true
+  has_many :ratings
 
   def ensure_auth_token
     unless self.auth_token
@@ -20,6 +22,6 @@ class User < ActiveRecord::Base
     while User.exists?(auth_token: token)
       token = SecureRandom.hex
     end
-      token
+    token
   end
 end
