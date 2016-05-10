@@ -6,7 +6,7 @@ class Place < ActiveRecord::Base
   geocoded_by :full_address, :latitude  => :lat, :longitude => :lng
   before_validation :ensure_coords!
 
-  has_attached_file :avatar, :default => "https://tiyatlanta.slack.com/files/mallerie/F16FW6ZQD/ninja_head.png"
+  has_attached_file :avatar, :default_url => "https://tiyatlanta.slack.com/files/mallerie/F16FW6ZQD/ninja_head.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
