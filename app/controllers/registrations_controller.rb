@@ -5,7 +5,6 @@ class RegistrationsController < ApplicationController
     if @user.save
       render "create.json.jbuilder", status: :created
       mail = WelcomeMailer.welcome(@user)
-      #see if git is tracking, maybe now
       mail.deliver_now
     else
       render json: { errors: @user.errors.full_messages },
