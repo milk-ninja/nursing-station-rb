@@ -213,6 +213,7 @@ This logs in your user
           "comment": "Decent nothing special",
           "privacy": 3,
           "cleanliness": 3,
+          "image[]": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263",
           "image[]": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"
         }
       ```
