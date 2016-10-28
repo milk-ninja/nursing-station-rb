@@ -42,6 +42,15 @@ class PlacesController < ApplicationController
     render "find_nearby.json.jbuilder"
   end
 
+  def edit
+    @place = Place.find_by!(id: params["id"])
+    render "edit.json.jbuilder"
+  end
+
+  # def update
+  #   @place = Place.find_by!(id:params["id"])
+  #   if @place.update_attributes(place_params)
+
 
   private
   def place_params
