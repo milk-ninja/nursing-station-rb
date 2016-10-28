@@ -240,6 +240,45 @@ This logs in your user
         }
       ```
 
+#### PATCH  /places/:id
+
+This updates a place to our database
+   Params:
+   * header: Auth-Token
+
+   Returns 200 OK on Success and 401 Unauthorized if no user found or incorrect place data.
+
+   **Request:**
+
+   ```
+   {
+     "name": "Nordstrom Phipps Plaza",
+     "street": "3500 Peachtree RD NE,
+     "city": Atlanta,
+     "state": "GA",
+     "zip": 30326,
+     "description": "Dedicated Moms room 2nd floor Women's Apparel ",
+     "avatar": "daisy_pollen_flower_220533",
+     "comment": "Super Nice!"
+   }
+   ```
+
+   **Response:**
+
+   ```
+   {
+     "place": {
+       "name": "Nordstrom Phipps Plaza",
+       "full_address": "3500 Peachtree RD NE Atlanta,GA 30326",
+       "description": "Dedicated Moms room 2nd floor Women's Apparel ",
+       "privacy": "4.0000", => this is an average returned as float
+       "cleanliness": "5.0000",
+       "lat": "33.8528444",
+       "lng": "-84.3622208",
+       "avatar_url": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"
+     }
+   }
+   ```
 
 == README
 
