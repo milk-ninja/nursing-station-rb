@@ -1,4 +1,4 @@
-json.place @place, :id, :name, :full_address, :description, :avatar
+json.place @place, :id, :name, :full_address, :description, :avatar , :lat, :lng
 json.ratings @place.ratings do |rating|
   json.id rating.id
   json.user_id rating.user_id
