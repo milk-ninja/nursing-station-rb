@@ -47,9 +47,15 @@ class PlacesController < ApplicationController
     render "edit.json.jbuilder"
   end
 
-  # def update
-  #   @place = Place.find_by!(id:params["id"])
-  #   if @place.update_attributes(place_params)
+  def update
+    @place = Place.find_by!(id:params["id"])
+    if @place.update_attributes(place_params) || @place.ratings.update_attributes(rating_params)
+      render "update.json.jbuilder", status: :ok
+    else
+      render json: { errors: @place.errors.full_messages },
+             status: :inprocessable_entity
+    end
+  end
 
 
   private
