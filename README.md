@@ -242,7 +242,7 @@ This logs in your user
 
 #### PATCH  /places/:id
 
-This updates a place to our database
+  This updates a place to our database
    Params:
    * header: Auth-Token
 
@@ -279,6 +279,41 @@ This updates a place to our database
      }
    }
    ```
+
+#### GET /places/:id/edit
+
+  This pulls up the edit info for a specific places praams:
+  * header: Auth_token
+
+  Returns 200 OK on Success and 401 Unauthorized if no current user or incorrect data
+
+  **Request**
+
+  ```
+    {
+      "id": 9
+    }
+  ```
+
+  **Response**
+
+  ```
+  {
+    "place": {
+      "id": 9,
+      "name": "Whole Foods",
+      "full_address": "2111 Briarcliff Rd NE, Atlanta, GA, 30329",
+      "description": "Super Nice!"},
+      "lat": 33.7445406,
+      "lng": -84.34266,
+      "privacy": "4.200",
+      "cleanliness": "3.500" ,
+      "comments": very nice and comfortable,
+      "avatar": "http://milkninja.s3.amazonaws.com/images/images/000/000/001/original/daisy_pollen_flower_220533.jpg?1462307263"
+    }
+  ```
+
+
 
 == README
 
