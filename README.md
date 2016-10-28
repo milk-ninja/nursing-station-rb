@@ -180,6 +180,8 @@ This logs in your user
           "name": "Whole Foods",
           "full_address": "2111 Briarcliff Rd NE, Atlanta, GA, 30329",
           "description": "Super Nice!"},
+          "lat": 33.7445406,
+          "lng": -84.34266,
           "ratings": [
           {
             "user_id": null,
